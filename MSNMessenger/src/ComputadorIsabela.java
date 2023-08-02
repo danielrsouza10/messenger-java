@@ -12,9 +12,11 @@ public class ComputadorIsabela {
         FacebookMessenger fcb = new FacebookMessenger();
 
         fcb.enviarMensagem();
+        fcb.receberMensagem();
 
         TelegramMessenger tlg = new TelegramMessenger();
 
         tlg.enviarMensagem();
+        tlg.receberMensagem();
     }
 }
