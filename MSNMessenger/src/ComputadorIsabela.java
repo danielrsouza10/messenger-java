@@ -1,22 +1,29 @@
+import apps.FacebookMessenger;
+import apps.MSNMessenger;
+import apps.ServicoMensagemInstantanea;
+import apps.TelegramMessenger;
+
 public class ComputadorIsabela {
 
     public static void main(String[] args) {
-        //abrindo MSN Messenger
+        ServicoMensagemInstantanea smi = null;
+        /*
+         * Nao sabe qual APP
+         * Mas Qualquer um deverá enviar e receber mensagem
+         */
 
-        MSNMessenger msn = new MSNMessenger();
+        String appEscolhido = "fbm";
 
-        msn.enviarMensagem();
+        if (appEscolhido.equals("msn")) {
+            smi = new MSNMessenger();
+        } else if (appEscolhido.equals("fbm")) {
+            smi = new FacebookMessenger();
+        } else if (appEscolhido.equals("tlg")) {
+            smi = new TelegramMessenger();
+        }
 
-        msn.receberMensagem();
+        smi.enviarMensagem();
+        smi.receberMensagem();
 
-        FacebookMessenger fcb = new FacebookMessenger();
-
-        fcb.enviarMensagem();
-        fcb.receberMensagem();
-
-        TelegramMessenger tlg = new TelegramMessenger();
-
-        tlg.enviarMensagem();
-        tlg.receberMensagem();
     }
 }
